@@ -50,6 +50,7 @@ class MyApp extends StatelessWidget {
           ),
           home: HomeScreen(),
           routes: {
+            HomeScreen.routeName: (ctx) => HomeScreen(),
             SearchScreen.routeName: (ctx) => SearchScreen(),
           }),
     );
