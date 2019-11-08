@@ -1,11 +1,11 @@
+import 'package:conferens_2019/providers/search.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:conferens_2019/providers/playlist.dart';
 
-class VoteList extends StatelessWidget {
+class SearchResult extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final dataItems = Provider.of<PlayList>(context).dataItems;
+    final dataItems = Provider.of<SearchList>(context).dataItems;
     return ListView.builder(
       itemBuilder: (ctx, index) {
         return Card(
@@ -20,7 +20,7 @@ class VoteList extends StatelessWidget {
               dataItems[index].artist,
               style: Theme.of(context).textTheme.caption,
             ),
-            trailing: Container(child: Icon(Icons.thumbs_up_down)),
+            trailing: Container(child: Icon(Icons.delete)),
           ),
         );
       },

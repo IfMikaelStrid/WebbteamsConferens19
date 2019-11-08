@@ -1,4 +1,6 @@
 import 'package:conferens_2019/providers/data_provider.dart';
+import 'package:conferens_2019/providers/search.dart';
+import 'package:conferens_2019/screens/search_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:intl/intl.dart';
@@ -19,6 +21,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider.value(
           value: PlayList(),
+        ),
+        ChangeNotifierProvider.value(
+          value: SearchList(),
         )
       ],
       child: MaterialApp(
@@ -45,7 +50,7 @@ class MyApp extends StatelessWidget {
           ),
           home: HomeScreen(),
           routes: {
-            SampleScreen.routeName: (ctx) => SampleScreen(),
+            SearchScreen.routeName: (ctx) => SearchScreen(),
           }),
     );
   }
