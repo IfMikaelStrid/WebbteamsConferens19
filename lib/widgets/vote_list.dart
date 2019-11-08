@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:conferens_2019/models/track.dart';
 import 'package:conferens_2019/providers/playlist.dart';
 
 class VoteList extends StatelessWidget {
@@ -29,6 +28,7 @@ class VoteList extends StatelessWidget {
               dataItems[index].artist,
               style: Theme.of(context).textTheme.caption,
             ),
+
             trailing: Container(
                 width: 120,
                 child: Row(
@@ -51,6 +51,7 @@ class VoteList extends StatelessWidget {
                     )
                   ],
                 )),
+
           ),
         );
       },
