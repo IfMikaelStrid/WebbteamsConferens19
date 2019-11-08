@@ -5,7 +5,7 @@ class DataProvider with ChangeNotifier {
   List<Data> _dataItems = [
     Data(
       name: 'Eric',
-      description: 'Bra kille, sportig och duktig på frontend',
+      description: 'Farlig kille, sportig och duktig på frontend',
     ),
     Data(
       name: 'Kristoffer',

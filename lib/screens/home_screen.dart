@@ -1,4 +1,5 @@
 import 'package:conferens_2019/screens/sample_screen.dart';
+import 'package:conferens_2019/widgets/vote_list.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -11,23 +12,12 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Theme.of(context).backgroundColor,
       appBar: AppBar(
-        title: Text('Conferens 2019'),
+        title: Text('Partify'),
       ),
       body: Container(
         width: double.infinity,
         padding: EdgeInsets.all(10),
-        child: RaisedButton(
-          textColor: Theme.of(context).textTheme.button.color,
-          color: Theme.of(context).primaryColor,
-          elevation: 5,
-          onPressed: () {
-            Navigator.of(context).pushNamed(SampleScreen.routeName);
-          },
-          child: Text(
-            title,
-            textAlign: TextAlign.center,
-          ),
-        ),
+        child: VoteList(),
       ),
     );
   }

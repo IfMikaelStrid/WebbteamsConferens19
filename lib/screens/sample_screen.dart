@@ -12,7 +12,7 @@ class SampleScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sample screen'),
+        title: Text('Coola appen'),
       ),
       body: ListView.builder(
         itemBuilder: (ctx, index) {
