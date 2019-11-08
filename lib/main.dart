@@ -6,11 +6,12 @@ import 'package:intl/intl.dart';
 import 'package:conferens_2019/screens/sample_screen.dart';
 import 'package:conferens_2019/screens/home_screen.dart';
 import 'package:conferens_2019/providers/playlist.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
-    Widget build(BuildContext context) {
+  Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider.value(
@@ -42,8 +43,7 @@ class MyApp extends StatelessWidget {
                   button: TextStyle(color: Colors.white),
                 ),
           ),
-          home:
-              HomeScreen('Hello ${DateFormat.yMMMd().format(DateTime.now())}'),
+          home: HomeScreen(),
           routes: {
             SampleScreen.routeName: (ctx) => SampleScreen(),
           }),
