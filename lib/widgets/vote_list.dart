@@ -7,9 +7,6 @@ class VoteList extends StatelessWidget {
     Provider.of<PlayList>(ctx).upVote(id);
   }
 
-  downVote(String id, BuildContext ctx) {
-    Provider.of<PlayList>(ctx).downVote(id);
-  }
   @override
   Widget build(BuildContext context) {
     final dataItems = Provider.of<PlayList>(context).dataItems;

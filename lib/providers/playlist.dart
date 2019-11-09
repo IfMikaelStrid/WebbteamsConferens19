@@ -13,14 +13,7 @@ class PlayList with ChangeNotifier {
     return [..._dataItems];
   }
 
-  void upVote(String id) {
-    print('+1');
-  }
-
-  void downVote(String id) {
-    print('-1');
-  }
-    Future<void> addSongToPlaylist(songId) {
+  Future<void> upVote(String songId) {
     var url = 'http://xlent-party.azurewebsites.net/api/vote/$songId';
     return http.post(
       url,
@@ -28,6 +21,7 @@ class PlayList with ChangeNotifier {
       print(response.body);
     });
   }
+
   Future<void> getPlayList() {
     _dataItems = [];
     const url = 'http://xlent-party.azurewebsites.net/api/playlist';
