@@ -10,7 +10,6 @@ class VoteList extends StatelessWidget {
   downVote(String id, BuildContext ctx) {
     Provider.of<PlayList>(ctx).downVote(id);
   }
-
   @override
   Widget build(BuildContext context) {
     final dataItems = Provider.of<PlayList>(context).dataItems;
@@ -30,28 +29,13 @@ class VoteList extends StatelessWidget {
             ),
 
             trailing: Container(
-                width: 120,
-                child: Row(
-                  children: <Widget>[
-                    Text(
-                      dataItems[index].rating.toString(),
-                      style: TextStyle(color: Colors.grey[900]),
-                    ),
-                    IconButton(
-                      icon: Icon(Icons.thumb_up),
-                      onPressed: () {
-                        upVote(dataItems[index].id, context);
-                      },
-                    ),
-                    IconButton(
-                      icon: Icon(Icons.thumb_down),
-                      onPressed: () {
-                        downVote(dataItems[index].id, context);
-                      },
-                    )
-                  ],
-                )),
-
+              
+              child: IconButton(icon: Icon( Icons.thumb_up),
+                onPressed: (){
+                  upVote(dataItems[index].id, context);
+                },
+              ),
+            ),
           ),
         );
       },

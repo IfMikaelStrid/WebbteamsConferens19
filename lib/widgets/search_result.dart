@@ -3,6 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class SearchResult extends StatelessWidget {
+  addSongToPlaylist(String id, BuildContext context) {
+    Provider.of<SearchList>(context).addSongToPlaylist(id);
+  }
+
   @override
   Widget build(BuildContext context) {
     final dataItems = Provider.of<SearchList>(context).dataItems;
@@ -20,7 +24,13 @@ class SearchResult extends StatelessWidget {
               dataItems[index].artist,
               style: Theme.of(context).textTheme.caption,
             ),
-            trailing: Container(child: Icon(Icons.delete)),
+            trailing: Container(
+                child: IconButton(
+              icon: Icon(Icons.add,color: Colors.green,),
+              onPressed: (){
+                addSongToPlaylist(dataItems[index].id,context);
+              },
+            )),
           ),
         );
       },

@@ -5,33 +5,55 @@ import 'package:conferens_2019/providers/search.dart';
 
 class SearchScreen extends StatelessWidget {
   static const routeName = '/search-screen';
+  final textInputController = TextEditingController();
+
+  search(String query, BuildContext context) {
+    Provider.of<SearchList>(context).search(query);
+  }
 
   @override
   Widget build(BuildContext context) {
     final dataItems = Provider.of<SearchList>(context).dataItems;
-
     return Scaffold(
-      backgroundColor: Theme.of(context).backgroundColor,
       appBar: AppBar(
         title: Text('Sök'),
       ),
-      body: Container(
-        width: double.infinity,
-        padding: EdgeInsets.all(10),
-        //child: VoteList(),
+      body: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Container(
-                color: Colors.white,
-                child: TextField(
-                  style: TextStyle(
-                      color: Theme.of(context).textTheme.caption.color),
-                  onChanged: (text) {
-                    print("First text field: $text");
-                  },
+            Container(
+              color: Colors.grey[900],
+              height: (MediaQuery.of(context).size.height * 0.1) -
+                  MediaQuery.of(context).padding.top,
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(5, 5, 5, 0),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(15),
+                  child: Container(
+                    color: Colors.white,
+                    child: TextField(
+                      decoration: InputDecoration(
+                        icon: Icon(Icons.search),
+                        border: InputBorder.none,
+                      ),
+                      controller: textInputController,
+                      style: TextStyle(
+                          color: Theme.of(context).textTheme.caption.color),
+                      onSubmitted: (text) {
+                        search(text, context);
+                      },
+                    ),
+                  ),
                 ),
+              ),
+            ), //sök,
+            Container(
+              color: Colors.grey[900],
+              height: MediaQuery.of(context).size.height * 0.9,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: SearchResult(),
               ),
             ),
           ],

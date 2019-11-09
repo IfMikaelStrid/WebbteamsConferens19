@@ -39,7 +39,7 @@ import 'package:provider/provider.dart';class HomeScreen extends StatelessWidget
         child: VoteList(),
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
+        child: Icon(Icons.refresh, color:Colors.green),
         onPressed: () => getPlayList(context),
       ),
     );

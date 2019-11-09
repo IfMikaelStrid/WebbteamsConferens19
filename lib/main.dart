@@ -3,9 +3,7 @@ import 'package:conferens_2019/providers/search.dart';
 import 'package:conferens_2019/screens/search_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:intl/intl.dart';
 
-import 'package:conferens_2019/screens/sample_screen.dart';
 import 'package:conferens_2019/screens/home_screen.dart';
 import 'package:conferens_2019/providers/playlist.dart';
 
